@@ -2,7 +2,7 @@ from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
+# from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from .models import Task
 from django.urls import reverse_lazy
@@ -57,10 +57,10 @@ class TaskList(LoginRequiredMixin, ListView):
         context['search_input'] = search_input
         return context
 
-class TaskDetail(LoginRequiredMixin, DetailView):
-    model = Task 
-    context_object_name = 'task'
-    template_name = 'Tasks/task.html'
+# class TaskDetail(LoginRequiredMixin, DetailView):
+#     model = Task 
+#     context_object_name = 'task'
+#     template_name = 'Tasks/task.html'
     
 class CreateTask(LoginRequiredMixin, CreateView):
     model = Task
