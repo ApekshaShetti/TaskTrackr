@@ -1,7 +1,18 @@
-<h3>Delete Task</h3>
-<a href="{% url 'task_list' %}">Back</a>
-<form action="" method="POST">
-    {% csrf_token %}
-    <p>Are you sure you want to delete {{task_delete}} task?</p>
-    <input type="submit" value="Delete">
-</form>
+{% extends 'Tasks/base.html' %}
+{% block content %}
+
+
+<div class="header-bar">
+    <a href="{% url 'task_list' %}">&#8592; Back</a>
+</div> 
+
+<div class="card-body">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{task_delete}} task?</p>
+        <input class="button" type="submit" value="Delete">
+    </form>
+</div>
+
+
+{% endblock content %}
